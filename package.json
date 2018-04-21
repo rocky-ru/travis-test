@@ -1,0 +1,19 @@
+{
+  "name": "travis-test",
+  "version": "1.0.0",
+  "description": "It's a travis test project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"1\" && exit 0;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocky-ru/travis-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rocky-ru/travis-test/issues"
+  },
+  "homepage": "https://github.com/rocky-ru/travis-test#readme"
+}
