@@ -1,5 +1,24 @@
+# 基础语言配置
 language: node_js
 node_js:
-  - "8.10.0"
+- 8.10.0
+
+# 执行完构建之后运行的脚本
+after_script: npm test
+
+# 执行travis encrypt-file ~/.ssh/aliyun.rsa --add 之后自动生成
+before_install:
+- openssl aes-256-cbc -K $encrypted_0de9a775f69e_key -iv $encrypted_0de9a775f69e_iv
+  -in aliyun_rsa.enc -out ~\/.ssh/aliyun_rsa -d
+
+- mv aliyun_rsa ~/.ssh -f
+
+# 改变文件权限
+- chmod 600 ~/.ssh/aliyun_rsa
+
+# 配置ssh
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/aliyun_rsa
+
 after_script:
-  npm test
+- scp -o StrictHostKeyChecking=no ./src/app.js 39.105.6.196:/root/code
