@@ -5,8 +5,7 @@ node_js:
 
 # 执行完构建之后运行的脚本
 after_script: 
-- npm test
-- scp -o StrictHostKeyChecking=no ./src/app.js root@39.105.6.196:/root/code
+- npm test && scp -o StrictHostKeyChecking=no ./src/app.js root@39.105.6.196:/root/code
 
 # 执行travis encrypt-file ~/.ssh/aliyun.rsa --add 之后自动生成
 before_install:
