@@ -9,7 +9,7 @@ after_script: npm test
 # 执行travis encrypt-file ~/.ssh/aliyun.rsa --add 之后自动生成
 before_install:
 - openssl aes-256-cbc -K $encrypted_0de9a775f69e_key -iv $encrypted_0de9a775f69e_iv
-  -in aliyun_rsa.enc -out ~\/.ssh/aliyun_rsa -d
+  -in aliyun_rsa.enc -out ~/.ssh/aliyun_rsa -d
 
 - mv aliyun_rsa ~/.ssh -f
 
